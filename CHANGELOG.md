@@ -15,5 +15,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Plugin hook integration with OpenCode provider system
 - Configuration support for host, baseURL, providerID, timeout, context/output limits
 - Capability mapping from Ollama model metadata to OpenCode capabilities
-- Postinstall script that checks Ollama connectivity
 - Changelog with Keep a Changelog format
