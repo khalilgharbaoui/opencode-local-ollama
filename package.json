@@ -1,0 +1,53 @@
+{
+   "$schema": "https://json.schemastore.org/package.json",
+   "name": "opencode-local-ollama",
+   "version": "0.1.0",
+   "description": "Native Ollama model discovery for OpenCode.",
+   "type": "module",
+   "license": "MIT",
+   "main": "./dist/index.js",
+   "types": "./dist/index.d.ts",
+   "exports": {
+     ".": {
+       "types": "./dist/index.d.ts",
+       "import": "./dist/index.js"
+     },
+     "./server": {
+       "types": "./dist/index.d.ts",
+       "import": "./dist/index.js"
+     }
+   },
+   "files": [
+     "dist",
+     "README.md",
+     "CHANGELOG.md",
+     "LICENSE",
+     "scripts"
+   ],
+   "scripts": {
+     "build": "tsc",
+     "typecheck": "tsc --noEmit",
+     "test": "node --import tsx --test test/*.test.ts",
+     "postinstall": "node scripts/postinstall.js",
+     "release": "standard-version"
+   },
+   "keywords": [
+     "opencode",
+     "ollama",
+     "plugin",
+     "provider",
+     "models",
+     "local-llm",
+     "local",
+     "ai"
+   ],
+    "engines": {
+      "node": ">=22"
+    },
+    "devDependencies": {
+     "@types/node": "^24.10.1",
+     "standard-version": "^9.5.0",
+     "tsx": "^4.21.0",
+     "typescript": "^5.9.3"
+   }
+ }
