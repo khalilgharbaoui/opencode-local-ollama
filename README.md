@@ -4,6 +4,16 @@ Native Ollama model discovery for OpenCode.
 
 `opencode-local-ollama` is a native OpenCode provider plugin. It discovers the models you already have in Ollama and registers them as `ollama/<model>` in OpenCode, so they show up in `/models` without a manual sync step.
 
+## opencode 2
+
+This plugin is for opencode 1.x.
+
+opencode 2 has Ollama built in as `opencode.provider.ollama`. It discovers local models the same way and registers them under the same `ollama` provider id, so there is nothing for this plugin to add there. Measured on opencode 2.0.11 (2026-09-23): the `ollama` models listed were identical with and without this plugin configured.
+
+opencode 2 refuses to load this plugin at all, with `Plugin must export a default definition with an id and an effect or setup function`, so the two cannot collide. Remove the plugin from an opencode 2 config to avoid that warning.
+
+One difference to know: on opencode 2 the Ollama address is set in config, under the `provider.ollama` settings. `OLLAMA_HOST` support is this plugin's feature, not opencode 2's.
+
 ## Why
 
 Existing Ollama/OpenCode helpers usually generate config files or require a separate sync command. This plugin runs during OpenCode startup and uses OpenCode's provider hook directly.
